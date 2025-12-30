@@ -13,7 +13,7 @@ services:
       - DOMAIN=${DOMAIN:-localhost}            # Your domain
       - SUBDOMAIN=${SUBDOMAIN:-headlessx}      # Your subdomain
       - PORT=3000
-      - NODE_ENV=production
+      - NODE_ENV=${NODE_ENV:-}
       - UV_THREADPOOL_SIZE=128
       - NODE_OPTIONS=--max-old-space-size=4096
     env_file:
