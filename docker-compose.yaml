@@ -3,7 +3,7 @@ version: '3.8'
 services:
   headlessx:
     build: 
-      dockerfile: docker/Dockerfile
+      dockerfile: Dockerfile
     container_name: headlessx
     ports:
       - "80:80"        # Nginx proxy to unified Node.js server
@@ -16,8 +16,6 @@ services:
       - NODE_ENV=${NODE_ENV:-}
       - UV_THREADPOOL_SIZE=128
       - NODE_OPTIONS=--max-old-space-size=4096
-    env_file:
-      - .env                            # Load from .env file
     restart: unless-stopped
     volumes:
       - logs:/app/logs                  # Persistent logs
